@@ -1,0 +1,28 @@
+{
+  "name": "name-this-color",
+  "version": "0.3.0",
+  "description": "Gives a color a human-friendly name",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/glennreyes/name-this-color.git"
+  },
+  "keywords": [
+    "color",
+    "name",
+    "name-that-color",
+    "human",
+    "friendly",
+    "readable"
+  ],
+  "author": "Glenn Reyes <office@glennreyes.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/glennreyes/name-this-color/issues"
+  },
+  "homepage": "https://github.com/glennreyes/name-this-color#readme",
+  "devDependencies": {
+    "change-case": "^2.3.1",
+    "onecolor": "^3.0.0"
+  }
+}
