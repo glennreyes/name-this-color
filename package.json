@@ -1,7 +1,7 @@
 {
   "name": "name-this-color",
   "version": "0.3.0",
-  "description": "Gives a color a human-friendly name",
+  "description": "Gives your colors a human-friendly name",
   "main": "index.js",
   "repository": {
     "type": "git",
