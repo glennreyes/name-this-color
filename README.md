@@ -14,7 +14,7 @@ npm install name-this-color --save-dev
 ```
 
 ## Usage
-This module supports the [one-color](https://github.com/One-com/one-color#api-overview) API of how you pass the color and returns an array of color objects.
+This module supports the [one-color](https://github.com/One-com/one-color#api-overview) API of how you pass the color. The method returns an array of color objects.
 ```js
 var nameThisColor = require('name-this-color');
 
