@@ -1,0 +1,12 @@
+{
+  "env": {
+    "browser": true,
+    "mocha": true,
+    "node": true
+  },
+  "extends": ["airbnb"],
+  "rules": {
+    "comma-dangle": 0,
+    "semi": [2, "never"]
+  }
+}

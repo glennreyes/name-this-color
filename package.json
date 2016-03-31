@@ -1,28 +1,53 @@
 {
-  "name": "name-this-color",
-  "version": "0.3.0",
-  "description": "Gives your colors a human-friendly name",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/glennreyes/name-this-color.git"
+  "name": "namethiscolor.github.io",
+  "main": "server",
+  "scripts": {
+    "start": "babel-node server",
+    "build": "cross-env NODE_ENV=production webpack -p",
+    "lint": "eslint .",
+    "test": "mocha --compilers js:babel-core/register --recursive"
   },
-  "keywords": [
-    "color",
-    "name",
-    "name-that-color",
-    "human",
-    "friendly",
-    "readable"
-  ],
   "author": "Glenn Reyes <office@glennreyes.com>",
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/glennreyes/name-this-color/issues"
+    "url": "https://github.com/glennreyes/react-redux-starter/issues"
   },
-  "homepage": "https://github.com/glennreyes/name-this-color#readme",
+  "homepage": "https://github.com/glennreyes/react-redux-starter#readme",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "react-redux": "^4.4.1",
+    "react-router": "^2.0.1",
+    "react-router-redux": "^4.0.0",
+    "redux": "^3.3.1",
+    "redux-devtools": "^3.1.1",
+    "redux-thunk": "^2.0.1"
+  },
   "devDependencies": {
-    "change-case": "^2.3.1",
-    "onecolor": "^3.0.0"
+    "babel-cli": "^6.6.5",
+    "babel-core": "^6.7.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-react-hmre": "^1.1.1",
+    "cross-env": "^1.0.7",
+    "css-loader": "^0.23.1",
+    "cssnano": "^3.5.2",
+    "eslint": "^2.5.3",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-react": "^4.2.3",
+    "expect": "^1.16.0",
+    "express": "^4.13.4",
+    "mocha": "^2.4.5",
+    "node-sass": "^3.4.2",
+    "postcss-loader": "^0.8.2",
+    "redux-devtools-dock-monitor": "^1.1.0",
+    "redux-devtools-log-monitor": "^1.0.5",
+    "redux-logger": "^2.6.1",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.12.14",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.10.0"
   }
 }
