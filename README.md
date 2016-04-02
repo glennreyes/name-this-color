@@ -1,10 +1,11 @@
 # Name this Color
-Gives your colors a human-friendly name, inspired and powered by [Name that Color](http://chir.ag/projects/ntc) from [Chirag Mehta](http://chir.ag/about).
 
 [![Build Status](https://travis-ci.org/glennreyes/name-this-color.svg?branch=master)](https://travis-ci.org/glennreyes/name-this-color)
 [![Coverage Status](https://coveralls.io/repos/github/glennreyes/name-this-color/badge.svg?branch=master)](https://coveralls.io/github/glennreyes/name-this-color?branch=master)
-[![Dependency Status](https://david-dm.org/glennreyes/name-this-color.svg)](https://david-dm.org/glennreyes/name-this-color)
+[![Dependency Status](https://david-dm.org/glennreyes/name-this-color/dev-status.svg)](https://david-dm.org/glennreyes/name-this-color#info=devDependencies)
 [![npm version](https://badge.fury.io/js/name-this-color.svg)](https://badge.fury.io/js/name-this-color)
+
+Gives your colors a human-friendly name, inspired and powered by [Name that Color](http://chir.ag/projects/ntc) from [Chirag Mehta](http://chir.ag/about).
 
 ## Motivation
 Name this Color is incredibly useful when you are structuring your color palettes, no matter if it is for your design tool or CSS. Especially for CSS pre-processors like [Sass](http://sass-lang.com/) or [Less](http://lesscss.org/), this module will help you to get a very well structure on naming your colors.
