@@ -36,7 +36,7 @@ nameThisColor(['#0088aa', '#8800aa', '#aa8800', '#aa0088']);
    title: 'Deep Cerulean',
    match: false,
    name: 'deep-cerulean'
- }], {
+ }, {
    hex: '#8800aa',
    title: 'Purple',
    match: false,
