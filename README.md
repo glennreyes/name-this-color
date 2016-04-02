@@ -50,15 +50,6 @@ nameThisColor(['#0088aa', '#8800aa', '#aa8800', '#aa0088']);
  */
 ```
 
-### CLI
-Returns the title only.
-```sh
-$ name-this-color '#91965a'
-$ # Avocado
-```
-If you prefer it using globally, enable the command by ```npm install -g name-this-color```.
-
-
 ### Properties
 
 #### hex
