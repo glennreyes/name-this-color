@@ -1,7 +1,7 @@
 import expect from 'expect'
 import nameThisColor from '../index'
 
-describe('String', () => {
+describe('nameThisColor(\'\')', () => {
   it('#0088aa is approx. deep-cerulean', () => {
     expect(nameThisColor('#0088aa')).toEqual(
       [{ hex: '#0088aa', title: 'Deep Cerulean', match: false, name: 'deep-cerulean' }]
@@ -14,7 +14,7 @@ describe('String', () => {
   })
 })
 
-describe('Arrays', () => {
+describe('nameThisColor([])', () => {
   it('deep-cerulean, purple, pirate-gold and flirt', () => {
     expect(nameThisColor(['#0088aa', '#8800aa', '#aa8800', '#aa0088'])).toEqual([
       {
