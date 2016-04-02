@@ -1,7 +1,6 @@
 var changeCase = require('change-case');
 var ntc = require('./lib/ntc');
 var oneColor = require('onecolor');
-var cli = require('./cli')(process.argv[2]);
 
 /**
  * Name this color
