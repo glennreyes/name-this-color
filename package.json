@@ -1,6 +1,6 @@
 {
   "name": "name-this-color",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "Gives your colors a human-friendly name",
   "main": "index.js",
   "repository": {
