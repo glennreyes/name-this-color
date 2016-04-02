@@ -1,21 +1,21 @@
-import expect from 'expect'
-import nameThisColor from '../index'
+var expect = require('expect');
+var nameThisColor = require('../index');
 
-describe('nameThisColor(\'\')', () => {
-  it('#0088aa is approx. deep-cerulean', () => {
+describe('nameThisColor(\'\')', function() {
+  it('#0088aa is approx. deep-cerulean', function() {
     expect(nameThisColor('#0088aa')).toEqual(
       [{ hex: '#0088aa', title: 'Deep Cerulean', match: false, name: 'deep-cerulean' }]
-    )
-  })
-  it('\'rgb(255, 0, 0)\' is red', () => {
+    );
+  });
+  it('\'rgb(255, 0, 0)\' is red', function() {
     expect(nameThisColor('rgb(255, 0, 0)')).toEqual(
       [{ hex: '#ff0000', title: 'Red', match: true, name: 'red' }]
-    )
-  })
-})
+    );
+  });
+});
 
-describe('nameThisColor([])', () => {
-  it('deep-cerulean, purple, pirate-gold and flirt', () => {
+describe('nameThisColor([])', function() {
+  it('deep-cerulean, purple, pirate-gold and flirt', function() {
     expect(nameThisColor(['#0088aa', '#8800aa', '#aa8800', '#aa0088'])).toEqual([
       {
         hex: '#0088aa',
@@ -38,6 +38,6 @@ describe('nameThisColor([])', () => {
         match: false,
         name: 'flirt'
       }
-    ])
-  })
-})
+    ]);
+  });
+});
