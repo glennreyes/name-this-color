@@ -1,6 +1,6 @@
-import path from 'path'
-import cssnano from 'cssnano'
-import webpack from 'webpack'
+import path from 'path';
+import cssnano from 'cssnano';
+import webpack from 'webpack';
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
@@ -10,14 +10,14 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/static/',
   },
   module: {
     loaders: [
       {
         test: /\.js$/,
         loaders: ['babel'],
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
@@ -25,18 +25,18 @@ module.exports = {
           'style',
           ['css?modules', 'localIdentName=[local]_[hash:base64:5]', 'sourceMap'].join('&'),
           'postcss',
-          'sass?sourceMap'
-        ]
-      }
-    ]
+          'sass?sourceMap',
+        ],
+      },
+    ],
   },
   postcss: () => [cssnano()],
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-      }
-    })
-  ]
-}
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+      },
+    }),
+  ],
+};
