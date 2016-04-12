@@ -1,8 +1,8 @@
-var expect = require('expect');
-var nameThisColor = require('../index');
+const expect = require('expect');
+const nameThisColor = require('../index');
 
-describe('nameThisColor(\'\')', function() {
-  it('#0088aa is approx. deep-cerulean', function() {
+describe('nameThisColor(\'\')', function () {
+  it('#0088aa is approx. deep-cerulean', function () {
     expect(nameThisColor('#0088aa')).toEqual(
       [{ hex: '#0088aa', title: 'Deep Cerulean', match: false, name: 'deep-cerulean' }]
     );

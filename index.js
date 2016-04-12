@@ -7,10 +7,11 @@ var oneColor = require('onecolor');
  * @param  {string|array} opts Color in HEX
  * @return {array}             List of color objects
  */
-module.exports = function(opts) {
+module.exports = function nameThisColor(opts) {
   var colors = [];
+  var i;
 
-  var addColor = function(color) {
+  var addColor = function addColor(color) {
     var hex = oneColor(color).hex();
     var title = ntc.name(hex)[1];
 
@@ -20,13 +21,14 @@ module.exports = function(opts) {
       match: ntc.name(hex)[2],
       name: changeCase.paramCase(title)
     });
-  }
+  };
 
   if (typeof opts === 'string') {
     addColor(opts);
   } else if (Object.prototype.toString.call(opts) === '[object Array]') {
-    for (var i = 0; i < opts.length; i++)
+    for (i = 0; i < opts.length; i++) {
       addColor(opts[i]);
+    }
   } else {
     throw new Error('You need to pass your color as {string} or {array} in an argument.');
   }
