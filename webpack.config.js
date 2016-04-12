@@ -1,6 +1,6 @@
-import path from 'path';
-import cssnano from 'cssnano';
-import webpack from 'webpack';
+const path = require('path');
+const cssnano = require('cssnano');
+const webpack = require('webpack');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
@@ -30,7 +30,9 @@ module.exports = {
       },
     ],
   },
-  postcss: () => [cssnano()],
+  postcss: function() {
+    return [cssnano()]
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
