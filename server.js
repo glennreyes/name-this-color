@@ -3,7 +3,7 @@ import Express from 'express';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
-import config from '../webpack.config';
+import config from './webpack.config';
 
 const app = new Express();
 const port = process.env.PORT || 3000;
