@@ -9,7 +9,8 @@
   },
   "scripts": {
     "coverage": "istanbul cover _mocha -- -R spec",
-    "test": "mocha"
+    "test": "mocha",
+    "travis": "mocha && npm run coverage"
   },
   "keywords": [
     "color",
