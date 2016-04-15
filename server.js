@@ -8,7 +8,6 @@ import config from './webpack.config';
 const app = new Express();
 const port = process.env.PORT || 3000;
 const compiler = webpack(config);
-const { publicPath, filename } = config.output;
 
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
 app.use(webpackHotMiddleware(compiler));
@@ -23,7 +22,7 @@ app.use((req, res) => {
       </head>
       <body>
         <div id="root"></div>
-        <script src="${publicPath + filename}"></script>
+        <script src="/static/app.js"></script>
       </body>
     </html>
   `);
