@@ -1,13 +1,18 @@
 const path = require('path');
 const cssnano = require('cssnano');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const StaticSitePlugin = require('react-static-webpack-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, 'src'),
+  entry: {
+    app: path.join(__dirname, 'src'),
+  },
   output: {
     path: path.join(__dirname, 'public'),
-    filename: 'bundle.js',
+    filename: 'app.js',
     publicPath: '/static/',
+    libraryTarget: 'commonjs2',
   },
   module: {
     loaders: [
@@ -18,12 +23,12 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: [
+        loader: ExtractTextPlugin.extract([
           'style',
-          ['css?modules', 'localIdentName=[local]_[hash:base64:5]', 'sourceMap'].join('&'),
+          ['css?modules', 'localIdentName=[hash:base64:3]', 'sourceMap'].join('&'),
           'postcss',
           'sass?sourceMap',
-        ],
+        ])
       },
     ],
   },
@@ -35,6 +40,16 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: { warnings: false },
+      screw_ie8: true,
+    }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new ExtractTextPlugin('[name].min.css'),
+    new StaticSitePlugin({
+      src: 'app',
+      stylesheet: '/static/app.css',
     }),
   ],
 };
