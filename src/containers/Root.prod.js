@@ -14,6 +14,4 @@ Root.propTypes = {
   store: PropTypes.object.isRequired,
 };
 
-export * from '../routes';
-
 export default Root;
