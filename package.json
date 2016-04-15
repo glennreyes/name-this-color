@@ -22,7 +22,9 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack -p",
+    "clean": "rimraf public",
+    "build:static": "cross-env NODE_ENV=production webpack --config webpack.config.prod",
+    "build": "npm run clean && npm run build:static",
     "coverage": "istanbul cover _mocha -- -R spec",
     "lint": "eslint .",
     "start": "babel-node server",
@@ -32,8 +34,8 @@
   "dependencies": {
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
-    "react-redux": "^4.4.2",
-    "react-router": "^2.1.1",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.2.2",
     "react-router-redux": "^4.0.2",
     "redux": "^3.4.0",
     "redux-thunk": "^2.0.1"
@@ -48,7 +50,7 @@
     "cross-env": "^1.0.7",
     "css-loader": "^0.23.1",
     "cssnano": "^3.5.2",
-    "eslint": "^2.7.0",
+    "eslint": "^2.8.0",
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-jsx-a11y": "^0.6.2",
     "eslint-plugin-react": "^4.3.0",
@@ -58,13 +60,15 @@
     "mocha": "^2.4.5",
     "node-sass": "^3.4.2",
     "postcss-loader": "^0.8.2",
+    "react-static-webpack-plugin": "^0.4.1",
     "redux-devtools": "^3.2.0",
     "redux-devtools-dock-monitor": "^1.1.1",
-    "redux-devtools-log-monitor": "^1.0.9",
+    "redux-devtools-log-monitor": "^1.0.10",
     "redux-logger": "^2.6.1",
+    "rimraf": "^2.5.2",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
-    "webpack": "^1.12.15",
+    "webpack": "^1.13.0",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.10.0"
   }
