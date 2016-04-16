@@ -1,14 +1,15 @@
 const path = require('path');
 const cssnano = require('cssnano');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [path.join(__dirname, 'src'), 'webpack-hot-middleware/client'],
   output: {
     path: path.join(__dirname, 'public'),
-    filename: 'app.js',
-    publicPath: '/static/',
+    filename: 'bundle.js',
+    publicPath: '/',
   },
   module: {
     loaders: [
@@ -37,6 +38,9 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
     }),
   ],
 };

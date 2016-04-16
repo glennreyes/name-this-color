@@ -2,7 +2,7 @@ const path = require('path');
 const cssnano = require('cssnano');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const StaticSitePlugin = require('react-static-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -10,9 +10,8 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'public'),
-    filename: 'app.js',
-    publicPath: '/static/',
-    libraryTarget: 'commonjs2',
+    filename: '[chunkhash].js',
+    publicPath: '/',
   },
   module: {
     loaders: [
@@ -23,10 +22,9 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract([
-          'style',
+        loader: ExtractTextPlugin.extract('style', [
           ['css?modules', 'localIdentName=[hash:base64:3]', 'sourceMap'].join('&'),
-          'postcss',
+          // 'postcss',
           'sass?sourceMap',
         ])
       },
@@ -46,10 +44,18 @@ module.exports = {
       screw_ie8: true,
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new ExtractTextPlugin('[name].min.css'),
-    new StaticSitePlugin({
-      src: 'app',
-      stylesheet: '/static/app.css',
+    new ExtractTextPlugin('[chunkhash].css'),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      minify: {
+        collapseWhitespace: true,
+        collapseInlineTagWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        minifyCSS: true,
+        minifyJS: true,
+        minifyURLs: true,
+      },
     }),
   ],
 };

@@ -1,2 +1,2 @@
-build
-webpack.*.js
+public
+webpack.config.*.js
