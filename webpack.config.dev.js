@@ -5,7 +5,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
-  entry: [path.join(__dirname, 'src'), 'webpack-hot-middleware/client'],
+  entry: {
+    app: [path.join(__dirname, 'src'), 'webpack-hot-middleware/client'],
+  },
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
@@ -27,6 +29,11 @@ module.exports = {
           'sass?sourceMap',
         ],
       },
+      {
+        test: /\.ico$/,
+        loader: 'file?name=[name].[ext]',
+        exclude: /node_modules/,
+      },
     ],
   },
   postcss: function() {
@@ -40,7 +47,7 @@ module.exports = {
       },
     }),
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: path.resolve(__dirname, 'src', 'index.html'),
     }),
   ],
 };

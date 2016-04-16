@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7 (28169) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="12.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.174868333   0 0 0 0 0.612643495   0 0 0 0 0.518062441  0 0 0 1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo" fill="#727BA9">
+            <g id="Group" filter="url(#filter-1)" transform="translate(226.982001, 253.358059) rotate(-45.000000) translate(-226.982001, -253.358059) translate(80.982001, 60.358059)">
+                <path d="M291.714937,113.707082 C291.718792,113.86963 291.72073,114.032653 291.72073,114.196131 L291.72073,364.84997 C291.72073,375.122364 284.065377,383.606004 274.146489,384.902544 C273.265927,385.019577 272.367441,385.079984 271.4548,385.079984 L20.8009608,385.079984 C19.54381,385.079984 18.3134499,384.965328 17.1197751,384.745899 C7.42420567,383.253777 1.00541797e-12,374.875682 1.00541797e-12,364.757997 L1.00541797e-12,114.104157 C1.00541797e-12,103.831764 7.65535325,95.3481231 17.5742411,94.0515834 C18.4547985,93.9345506 19.3532872,93.8741433 20.2659302,93.8741433 L251.284065,93.8741433 L251.284065,21.0934584 C251.284065,9.92398217 260.332369,0.869332649 271.499501,0.869332649 C282.664178,0.869332649 291.714937,9.92547626 291.714937,21.0934584 L291.714937,113.707082 Z M251.047415,344.637526 L251.278272,344.637526 L251.278272,134.316602 L40.7264905,134.316602 L251.047415,344.637526 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

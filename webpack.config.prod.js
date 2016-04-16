@@ -24,9 +24,14 @@ module.exports = {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style', [
           ['css?modules', 'localIdentName=[hash:base64:3]', 'sourceMap'].join('&'),
-          // 'postcss',
+          'postcss',
           'sass?sourceMap',
         ])
+      },
+      {
+        test: /\.ico$/,
+        loader: 'file?name=[name].[ext]',
+        exclude: /node_modules/,
       },
     ],
   },
@@ -46,7 +51,7 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new ExtractTextPlugin('[chunkhash].css'),
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: path.resolve(__dirname, 'src', 'index.html'),
       minify: {
         collapseWhitespace: true,
         collapseInlineTagWhitespace: true,

@@ -1,0 +1,9 @@
+.HomeView {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+
+  &__side {
+    width: 50%;
+  }
+}

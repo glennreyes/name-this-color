@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { resetErrorMessage } from '../actions';
+import '../styles/base.scss';
 
 class App extends Component {
   constructor(props) {
@@ -36,8 +37,6 @@ class App extends Component {
       <div>
         {this.renderErrorMessage()}
         {children}
-        <hr />
-        <footer>The Footer</footer>
       </div>
     );
   }
