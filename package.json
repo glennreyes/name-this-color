@@ -29,7 +29,7 @@
     "lint": "eslint .",
     "start": "node server",
     "test": "mocha --compilers js:babel-core/register --recursive",
-    "travis": "npm run lint && npm run test && npm run coverage"
+    "travis": "npm run lint && npm test && npm run coverage"
   },
   "dependencies": {
     "react": "^15.0.1",
