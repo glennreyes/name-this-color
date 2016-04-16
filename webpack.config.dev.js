@@ -24,7 +24,7 @@ module.exports = {
         test: /\.scss$/,
         loaders: [
           'style',
-          ['css?modules', 'localIdentName=[local]_[hash:base64:5]', 'sourceMap'].join('&'),
+          ['css?modules', 'localIdentName=[local]_[hash:base64:3]', 'sourceMap'].join('&'),
           'postcss',
           'sass?sourceMap',
         ],

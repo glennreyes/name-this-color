@@ -2,6 +2,21 @@
 @import 'variables';
 
 body {
-  background: $ntc-secondary;
+  background: darken($ntc-secondary, 5%);
+  font-family: Raleway, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
+}
+
+textarea {
+  background: $ntc-secondary;
+  border: 0;
+  border-radius: 1rem;
+  color: $ntc-primary;
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  outline: 0;
+  padding: 2rem;
+  text-transform: uppercase;
+  width: 100%;
 }

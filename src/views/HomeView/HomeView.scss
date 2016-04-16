@@ -4,6 +4,8 @@
   width: 100vw;
 
   &__side {
+    display: flex;
+    padding: 1rem;
     width: 50%;
   }
 }

@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { resetErrorMessage } from '../actions';
+import Header from '../components/Header';
 import '../styles/base.scss';
 
 class App extends Component {
@@ -35,6 +36,7 @@ class App extends Component {
     const { children } = this.props;
     return (
       <div>
+        <Header />
         {this.renderErrorMessage()}
         {children}
       </div>

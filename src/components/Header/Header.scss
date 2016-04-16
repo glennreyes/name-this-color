@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+.Header {
+  color: $ntc-primary;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}

@@ -1,8 +1,7 @@
 import React from 'react';
+import styles from './ColorOutput.scss'
 
 const ColorOutput = () =>
-  <div>
-    <input />
-  </div>;
+  <textarea className={styles.ColorOutput} readOnly />;
 
 export default ColorOutput;
