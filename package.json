@@ -28,13 +28,13 @@
   "homepage": "https://github.com/glennreyes/name-this-color#readme",
   "dependencies": {
     "change-case": "^2.3.1",
+    "eslint-plugin-import": "^1.6.0",
     "onecolor": "^3.0.1"
   },
   "devDependencies": {
     "coveralls": "^2.11.9",
     "eslint": "^2.8.0",
     "eslint-config-airbnb": "^8.0.0",
-    "eslint-plugin-import": "^1.6.0",
     "expect": "^1.18.0",
     "istanbul": "^0.4.3",
     "mocha": "^2.4.5",
