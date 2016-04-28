@@ -17,6 +17,6 @@ app.listen(port, error => {
     console.error(error);
   } else {
     // eslint-disable-next-line no-console
-    console.info(`The express server is running at http://localhost:${port}\n'`);
+    console.info(`The express server is running at http://localhost:${port}`);
   }
 });

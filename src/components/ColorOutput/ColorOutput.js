@@ -1,7 +1,23 @@
-import React from 'react';
-import styles from './ColorOutput.scss'
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import styles from './ColorOutput.scss';
 
-const ColorOutput = () =>
-  <textarea className={styles.ColorOutput} readOnly />;
+const ColorOutput = ({ colors }) => {
+  const colorItems = colors.map(color => (
+    <span className={styles.ColorOutput__item} style={{ color: color.hex }}>
+      {color.name}
+    </span>
+  ));
 
-export default ColorOutput;
+  return (<section className={styles.ColorOutput}>{colorItems}</section>);
+};
+
+ColorOutput.propTypes = {
+  colors: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  colors: state.colors,
+});
+
+export default connect(mapStateToProps)(ColorOutput);

@@ -1,5 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import styles from './ColorInput.scss';
+import { isHexColor } from 'validator';
+import nameThisColor from 'name-this-color';
+import { setColorList } from '../../actions';
 
 class ColorInput extends Component {
   constructor(props) {
@@ -8,10 +12,25 @@ class ColorInput extends Component {
     this.state = { value: '' };
   }
 
+  toColorName(hexValues) {
+    const { dispatch } = this.props;
+    const colors = hexValues.split('\n').filter(value => isHexColor(value));
+    const namedColors = nameThisColor(colors);
+
+    if (colors.length > 0) {
+      dispatch(setColorList(namedColors));
+    }
+  }
+
+  toHexValues(value) {
+    return value.replace(/^\s*[\r\n]/gm, '');
+  }
+
   handleChange(event) {
-    const { value } = event.target
-    this.setState({ value });
-    console.log(value);
+    const { value } = event.target;
+    const hexValues = this.toHexValues(value);
+    this.setState({ value: hexValues });
+    this.toColorName(hexValues);
   }
 
   render() {
@@ -27,4 +46,8 @@ class ColorInput extends Component {
   }
 }
 
-export default ColorInput;
+ColorInput.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
+
+export default connect()(ColorInput);

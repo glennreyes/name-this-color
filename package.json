@@ -39,7 +39,8 @@
     "react-router": "^2.3.0",
     "react-router-redux": "^4.0.4",
     "redux": "^3.5.2",
-    "redux-thunk": "^2.0.1"
+    "redux-thunk": "^2.0.1",
+    "validator": "^5.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.7.7",

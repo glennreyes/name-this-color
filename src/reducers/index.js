@@ -15,7 +15,17 @@ const errorMessage = (state = null, action) => {
   return state;
 };
 
+const colors = (state = [], action) => {
+  switch (action.type) {
+    case ActionTypes.SET_COLOR_LIST:
+      return action.colors;
+    default:
+      return state;
+  }
+};
+
 const rootReducer = combineReducers({
+  colors,
   errorMessage,
   routing,
 });

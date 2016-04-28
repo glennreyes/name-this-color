@@ -1,2 +1,15 @@
+@import '../../styles/variables';
+
 .ColorInput {
+  background: $ntc-secondary;
+  border: 0;
+  border-radius: 1rem;
+  color: $ntc-primary;
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  outline: 0;
+  padding: 2rem;
+  text-transform: uppercase;
+  width: 100%;
 }
