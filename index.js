@@ -25,7 +25,7 @@ module.exports = function nameThisColor(opts) {
 
   if (typeof opts === 'string') {
     addColor(opts);
-  } else if (Object.prototype.toString.call(opts) === '[object Array]') {
+  } else if (opts.constructor === Array) {
     for (i = 0; i < opts.length; i++) {
       addColor(opts[i]);
     }
