@@ -1,5 +1,6 @@
 const path = require('path');
 const cssnano = require('cssnano');
+const postcssImport = require('postcss-import');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -21,6 +22,14 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
+        test: /\.css$/,
+        loaders: [
+          'style',
+          'css?sourceMap',
+        ],
+        include: /node_modules/,
+      },
+      {
         test: /\.scss$/,
         loaders: [
           'style',
@@ -28,6 +37,7 @@ module.exports = {
           'postcss',
           'sass?sourceMap',
         ],
+        exclude: /node_modules/,
       },
       {
         test: /\.ico$/,
@@ -37,7 +47,10 @@ module.exports = {
     ],
   },
   postcss: function() {
-    return [cssnano()]
+    return [
+      postcssImport(),
+      cssnano(),
+    ]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

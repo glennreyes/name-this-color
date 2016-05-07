@@ -15,9 +15,9 @@ const errorMessage = (state = null, action) => {
   return state;
 };
 
-const colors = (state = [], action) => {
+const colors = (state = {}, action) => {
   switch (action.type) {
-    case ActionTypes.SET_COLOR_LIST:
+    case ActionTypes.UPDATE_COLORS:
       return action.colors;
     default:
       return state;

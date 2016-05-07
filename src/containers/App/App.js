@@ -1,8 +1,18 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { resetErrorMessage } from '../actions';
-import Header from '../components/Header';
-import '../styles/base.scss';
+import { resetErrorMessage } from '../../actions';
+import ColorInput from '../../components/ColorInput';
+import ColorOutput from '../../components/ColorOutput';
+
+// Default styles/themes
+import 'highlight.js/styles/solarized-dark.css';
+import 'draft-js/dist/Draft.css';
+
+// App base styles
+import '../../styles/base.scss';
+
+// Component styles
+import styles from './App.scss';
 
 class App extends Component {
   constructor(props) {
@@ -33,12 +43,13 @@ class App extends Component {
   }
 
   render() {
-    const { children } = this.props;
     return (
       <div>
-        <Header />
         {this.renderErrorMessage()}
-        {children}
+        <main className={styles.App}>
+          <section className={styles.App__side}><ColorInput /></section>
+          <section className={styles.App__side}><ColorOutput /></section>
+        </main>
       </div>
     );
   }

@@ -1,23 +1,12 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
+// import Highlight from 'react-highlight.js';
 import styles from './ColorOutput.scss';
 
-const ColorOutput = ({ colors }) => {
-  const colorItems = colors.map(color => (
-    <span className={styles.ColorOutput__item} style={{ color: color.hex }}>
-      {color.name}
-    </span>
-  ));
+const ColorOutput = () => (
+  <div className={styles.ColorOutput}>
+    {'var foo = "bar";'}
+  </div>
+);
 
-  return (<section className={styles.ColorOutput}>{colorItems}</section>);
-};
-
-ColorOutput.propTypes = {
-  colors: PropTypes.object.isRequired,
-};
-
-const mapStateToProps = (state) => ({
-  colors: state.colors,
-});
-
-export default connect(mapStateToProps)(ColorOutput);
+export default connect()(ColorOutput);

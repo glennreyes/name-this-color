@@ -1,47 +1,45 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import styles from './ColorInput.scss';
+import { Editor, EditorState } from 'draft-js';
 import { isHexColor } from 'validator';
 import nameThisColor from 'name-this-color';
-import { setColorList } from '../../actions';
+import { updateColors } from '../../actions';
+import styles from './ColorInput.scss';
 
-class ColorInput extends Component {
+class ColorInput extends React.Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.state = { value: '' };
+    this.state = { editorState: EditorState.createEmpty() };
+    this.onChange = this.onChange.bind(this);
   }
 
-  toColorName(hexValues) {
-    const { dispatch } = this.props;
-    const colors = hexValues.split('\n').filter(value => isHexColor(value));
-    const namedColors = nameThisColor(colors);
+  onChange(editorState) {
+    const plainText = editorState.getCurrentContent().getPlainText();
+    const hexValues = this.toHexValues(plainText);
+    const colors = this.toColorName(hexValues);
 
-    if (colors.length > 0) {
-      dispatch(setColorList(namedColors));
-    }
+    this.props.dispatch(updateColors(colors));
+    this.setState({ editorState });
   }
 
   toHexValues(value) {
     return value.replace(/^\s*[\r\n]/gm, '');
   }
 
-  handleChange(event) {
-    const { value } = event.target;
-    const hexValues = this.toHexValues(value);
-    this.setState({ value: hexValues });
-    this.toColorName(hexValues);
+  toColorName(hexValues) {
+    const colors = hexValues.split('\n').filter(value => isHexColor(value));
+    return nameThisColor(colors);
   }
 
   render() {
-    const { value } = this.state;
+    const { editorState } = this.state;
     return (
-      <textarea
-        className={styles.ColorInput}
-        onChange={this.handleChange}
-        placeholder="Give me your HEX!"
-        value={value}
-      />
+      <div className={styles.ColorInput}>
+        <Editor
+          editorState={editorState}
+          onChange={this.onChange}
+        />
+      </div>
     );
   }
 }

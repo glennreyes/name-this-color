@@ -1,12 +1,12 @@
 export const RESET_ERROR_MESSAGE = 'RESET_ERROR_MESSAGE';
-export const SET_COLOR_LIST = 'SET_COLOR_LIST';
+export const UPDATE_COLORS = 'UPDATE_COLORS';
 
 // Resets the currently visible error message.
 export const resetErrorMessage = () => ({
   type: RESET_ERROR_MESSAGE,
 });
 
-export const setColorList = colors => ({
-  type: SET_COLOR_LIST,
-  colors
+export const updateColors = (colors) => ({
+  type: UPDATE_COLORS,
+  colors,
 });

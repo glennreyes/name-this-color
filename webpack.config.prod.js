@@ -1,4 +1,5 @@
 const path = require('path');
+const postcssImport = require('postcss-import');
 const cssnano = require('cssnano');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -21,6 +22,14 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
+        test: /\.css$/,
+        loaders: [
+          'style',
+          'css?sourceMap',
+        ],
+        include: /node_modules/,
+      },
+      {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style', [
           ['css?modules', 'localIdentName=[hash:base64:3]', 'sourceMap'].join('&'),
@@ -36,7 +45,10 @@ module.exports = {
     ],
   },
   postcss: function() {
-    return [cssnano()]
+    return [
+      postcssImport(),
+      cssnano(),
+    ]
   },
   plugins: [
     new webpack.DefinePlugin({
